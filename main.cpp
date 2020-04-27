@@ -2,9 +2,12 @@
 #include <vector>
 #include <algorithm>
 
+#define ll long long
+
 using namespace std;
 
 namespace my {
+    enum eNums{ZERO, ONE};
 
     const int GLOBAL = 5;
 
@@ -87,9 +90,8 @@ namespace my {
     class myStatic{
     public:
         class myException : public std::exception{};
-        static int var;
         static int getVar(T obj, int num)noexcept(false){
-            var = num;
+            int var = num;
             for(int i = 0; i < 10; ++i){
                 var++;
                 if(var < 10){
@@ -99,8 +101,8 @@ namespace my {
                 }else{
                     var++;
                 }
-                return var;
             }
+                return var;
         }
     };
 };
@@ -142,6 +144,21 @@ int main() {
     func4(var);
     func5(3);
     func6(4);
+
+    do{
+        break;
+    }while(true);
+
+    switch (my::eNums::ONE) {
+        case 1:
+            break;
+        default:
+            break;
+    }
+    ll lon = 4;
+    while(lon > 0){
+        lon--;
+    }
     return 0;
 }
 
